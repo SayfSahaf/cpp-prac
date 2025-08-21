@@ -21,6 +21,11 @@ int main()
 	printPointer(a);
 
 	*/
+	/*
 	IntArray a1(4);
+	a1.set(0, 55);
+	std::cout << a1.get(0) << std::endl;
+	std::cout << a1.getSize() << std::endl;
 	return 0;
+	*/
 }

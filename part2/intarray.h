@@ -10,6 +10,13 @@ class IntArray
 
 	public:
 		IntArray(size_t size);
+		~IntArray();
+
+	public:
+		void set(size_t index, int val);
+		int get(size_t index) const;
+		int getSize() const;
+
 };
 
 
