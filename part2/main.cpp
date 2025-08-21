@@ -1,4 +1,5 @@
 #include <iostream>
+#include "intarray.h"
 
 void printPointer(int & a)
 {
@@ -20,5 +21,6 @@ int main()
 	printPointer(a);
 
 	*/
+	IntArray a1(4);
 	return 0;
 }
