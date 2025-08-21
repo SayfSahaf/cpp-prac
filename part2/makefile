@@ -8,4 +8,4 @@ run: output
 	./output
 
 clean:
-	rm -f output main.o student.o course.o
+	rm -f output main.o
