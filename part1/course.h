@@ -13,6 +13,8 @@ class Course
 		Course(const std::string& name);
 		void addStudent(const Student& s);
 		const std::vector<Student> getStudent();
+		void printInfo() const;
+		void addStudentFromFile(const std::string& filename);
 };
 
 #endif

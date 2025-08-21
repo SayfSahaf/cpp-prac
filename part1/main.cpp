@@ -1,6 +1,8 @@
 #include "student.h"
 #include "course.h"
 #include <iostream>
+#include <fstream>
+
 
 int main()
 {
@@ -41,12 +43,9 @@ int main()
     };
     */
 
-    const Student s1("Sayf", "Sahaf", 501198036, 87.0f);
-    const Student s2("Chuka", "Lowel", 176132351, 65.3f);
-
     Course c1("BIOL1001");
-    c1.addStudent(s1);
-    c1.addStudent(s2);
+    c1.addStudentFromFile("students.txt");
+    c1.printInfo();
 
 
     return 0;
