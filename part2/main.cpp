@@ -1,5 +1,5 @@
 #include <iostream>
-#include "intarray.h"
+#include "dynamicarray.h"
 
 void printPointer(int & a)
 {
@@ -28,4 +28,11 @@ int main()
 	std::cout << a1.getSize() << std::endl;
 	return 0;
 	*/
+
+	DynamicArray<int> a1(10);
+
+	a1.set(4, 22);
+
+	a1.printArr();
+
 }
