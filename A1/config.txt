@@ -1,0 +1,8 @@
+Window 1280 720
+Font fonts/VCR_OSD_MONO_1.001.ttf 18 255 255 255
+Circle CGreen 100 100 -3 2 0 255 0 50
+Circle CBlue 100 100 -3 2 0 255 0 50
+Circle CPurple 100 100 -3 2 0 255 0 50
+Rectangle RRed 100 100 4 4 255 0 0 50 25
+Rectangle RGrey 100 100 4 4 255 0 0 50 25
+Rectangle RTeal 100 100 4 4 255 0 0 50 25
