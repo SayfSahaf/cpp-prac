@@ -1,5 +1,5 @@
-#include "student.h"
-#include "course.h"
+#include "../include/student.h"
+#include "../include/course.h"
 #include <iostream>
 #include <fstream>
 
@@ -43,10 +43,7 @@ int main()
     };
     */
 
-    Course c1("BIOL1001");
-    c1.addStudentFromFile("students.txt");
-    c1.printInfo();
-
+    std::cout << "CMAKE test please work" << std::endl;
 
     return 0;
 };

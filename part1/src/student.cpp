@@ -1,4 +1,4 @@
-#include "student.h"
+#include "../include/student.h"
 
 Student::Student(std::string first_name, std::string last_name, int id, float average)
 	: name_first(first_name)

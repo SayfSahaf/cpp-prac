@@ -1,5 +1,5 @@
-#include "course.h"
-#include "student.h"
+#include "../include/course.h"
+#include "../include/student.h"
 #include <fstream>
 
 Course::Course(const std::string& name)
