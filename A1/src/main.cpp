@@ -15,8 +15,12 @@ int main()
 
 	if (!ImGui::SFML::Init(window)) return -1;
 
-	sf::CircleShape shape(100.0f);
-	shape.setFillColor(sf::Color::Green);
+	//initializing a shape
+	sf::CircleShape c1(50.0f);
+	c1.setFillColor(sf::Color(100, 100, 255));
+	//setting speed values
+	float circleSpeedX = 1.0f;
+	float circleSpeedY = 0.5f;
 
 	sf::Clock deltaClock;
 
@@ -29,9 +33,7 @@ int main()
 	}
 
 	//making a text object
-	sf::Text text(font);
-	text.setString("Hello, World");
-	text.setCharacterSize(12);
+	sf::Text text(font, "Hello, World", 12);
 	text.setFillColor(sf::Color::White);
 
 
@@ -49,14 +51,33 @@ int main()
 		}
 
 		ImGui::SFML::Update(window, deltaClock.restart());
-
 		ImGui::ShowDemoWindow();
 		ImGui::Begin("Hello, World!");
 		ImGui::Button("Look at this pretty button");
 		ImGui::End();
 
+
 		window.clear(sf::Color::Black);
-		window.draw(shape);
+		//WASD MOVEMENT
+		/*
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
+		{
+    		c1.move({-1.f, 0.f});
+		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D))
+		{
+			c1.move({1.f, 0.f});
+		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W))
+		{
+			c1.move({0.f, -1.f});
+		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S))
+		{
+			c1.move({0.f, 1.f});
+		}
+		*/
+		window.draw(c1);
 		window.draw(text);
 		ImGui::SFML::Render(window);
 		window.display();
