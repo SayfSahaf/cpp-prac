@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 4.1.0)
-project(sfmltest LANGUAGES CXX)
+project(sfmlgame LANGUAGES CXX)
 
 add_subdirectory(src)
 add_subdirectory(dependencies)

@@ -16,10 +16,24 @@ int main()
 	if (!ImGui::SFML::Init(window)) return -1;
 
 	sf::CircleShape shape(100.0f);
-
 	shape.setFillColor(sf::Color::Green);
 
 	sf::Clock deltaClock;
+
+	//loading font
+	sf::Font font;
+	if (!font.openFromFile("../assets/fonts/VCR_OSD_MONO_1.001.ttf"))
+	{
+		std::cerr << "Error loading font \n";
+		exit(-1);
+	}
+
+	//making a text object
+	sf::Text text(font);
+	text.setString("Hello, World");
+	text.setCharacterSize(12);
+	text.setFillColor(sf::Color::White);
+
 
 	while (window.isOpen())
 	{
@@ -43,6 +57,7 @@ int main()
 
 		window.clear(sf::Color::Black);
 		window.draw(shape);
+		window.draw(text);
 		ImGui::SFML::Render(window);
 		window.display();
 

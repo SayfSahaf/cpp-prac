@@ -1,12 +1,12 @@
 add_executable(
-    sfmlgame_exe
+    game
     main.cpp
 )
 
-target_compile_features(sfmlgame_exe PRIVATE cxx_std_17)
+target_compile_features(game PRIVATE cxx_std_17)
 
 target_link_libraries(
-	sfmlgame_exe 
+	game
     PRIVATE 
     sfml-graphics 
     sfml-window 
