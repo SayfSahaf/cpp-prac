@@ -1,5 +1,6 @@
 add_executable(
     game
+    initializeConfigFile.cpp
     main.cpp
 )
 

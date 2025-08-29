@@ -6,6 +6,8 @@
 #include "imgui.h"
 #include "imgui-SFML.h"
 
+#include "initializeConfigFile.h"
+
 
 
 int main()
@@ -27,7 +29,6 @@ int main()
 	//actual circle initialization
 	sf::CircleShape c1(circleRadius, circleSegments);
 	c1.setFillColor(sf::Color(100, 100, 255));
-
 
 	//setting up variable for color wheel
 	float c[3] = {1.0f, 1.0f, 1.0f};
