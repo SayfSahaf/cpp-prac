@@ -15,14 +15,23 @@ int main()
 
 	if (!ImGui::SFML::Init(window)) return -1;
 
+
 	//initializing a shape
-	sf::CircleShape c1(50.0f);
-	c1.setFillColor(sf::Color(100, 100, 255));
+	bool drawCircle = true;
 	//setting speed values
 	float circleSpeedX = 1.0f;
 	float circleSpeedY = 0.5f;
+	//radius and no. of segments
+	float circleRadius = 50.0f;
+	int circleSegments = 56;
+	//actual circle initialization
+	sf::CircleShape c1(circleRadius, circleSegments);
+	c1.setFillColor(sf::Color(100, 100, 255));
 
-	sf::Clock deltaClock;
+
+	//setting up variable for color wheel
+	float c[3] = {1.0f, 1.0f, 1.0f};
+	
 
 	//loading font
 	sf::Font font;
@@ -32,11 +41,14 @@ int main()
 		exit(-1);
 	}
 
+
 	//making a text object
+	bool drawText = true;
 	sf::Text text(font, "Hello, World", 12);
 	text.setFillColor(sf::Color::White);
 
 
+	sf::Clock deltaClock;
 	while (window.isOpen())
 	{
 
@@ -51,10 +63,23 @@ int main()
 		}
 
 		ImGui::SFML::Update(window, deltaClock.restart());
-		ImGui::ShowDemoWindow();
-		ImGui::Begin("Hello, World!");
-		ImGui::Button("Look at this pretty button");
+
+		//draw ImGui window ui
+		ImGui::Begin("A1 Shape Settings");
+		ImGui::Text("Adjust shape settings here");
+		
+		ImGui::Checkbox("Draw circle", &drawCircle);
+		ImGui::SameLine();
+		ImGui::Checkbox("Draw text", &drawText);
+		ImGui::SliderFloat("Circle radius", &circleRadius, 5.0f, 200.0f);
+		ImGui::SliderInt("Circle segments", &circleSegments, 6, 64);
+		ImGui::ColorPicker3("Circle Color", c);
 		ImGui::End();
+
+
+		c1.setRadius(circleRadius);
+		c1.setPointCount(circleSegments);
+		c1.setFillColor(sf::Color(c[0]*255, c[1]*255, c[2]*255));
 
 
 		window.clear(sf::Color::Black);
@@ -77,8 +102,16 @@ int main()
 			c1.move({0.f, 1.f});
 		}
 		*/
-		window.draw(c1);
-		window.draw(text);
+		
+		if (drawCircle)
+		{
+			window.draw(c1);
+		}
+		if (drawText)
+		{
+			window.draw(text);
+		}
+		
 		ImGui::SFML::Render(window);
 		window.display();
 
